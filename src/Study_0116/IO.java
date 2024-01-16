@@ -68,7 +68,7 @@ public class IO {
         File f_w = new File("src/Study_0116/b.txt");
 
         try(
-                //
+                //字符流缓冲
                 BufferedReader br = new BufferedReader(
                         new InputStreamReader(
                                 new FileInputStream(f), "UTF-8"));
@@ -113,7 +113,7 @@ public class IO {
         File f_w = new File("d:\\dir\\5_w.txt");
 
         try (
-
+                //字符流
                 InputStreamReader isr = new InputStreamReader(new FileInputStream(f), "UTF-8");
                 OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f_w), "UTF-8");
 
