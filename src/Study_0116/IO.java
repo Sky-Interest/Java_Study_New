@@ -113,6 +113,7 @@ public class IO {
         File f_w = new File("d:\\dir\\5_w.txt");
 
         try (
+
                 InputStreamReader isr = new InputStreamReader(new FileInputStream(f), "UTF-8");
                 OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f_w), "UTF-8");
 
