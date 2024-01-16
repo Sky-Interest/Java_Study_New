@@ -2,7 +2,7 @@ package 字符缓冲流;
 
 import java.io.*;
 
-public class BufferedReader_test {
+public class BufferedReader_and_Writer_test {
     public static void main(String[] args) {
 
     }
