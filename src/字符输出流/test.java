@@ -26,8 +26,11 @@ public class test {
 //            System.out.println("" + r.read(c));
 //            System.out.println("读完了");
             int hasRead = 0;
+            int count = 0;
             while((hasRead = r.read(c))!=-1) {
-                String s = new String();
+                String s = new String(c,0,hasRead);
+                System.out.println(s);
+                count++;
 
             }
         } catch (Exception e) {
