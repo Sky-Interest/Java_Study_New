@@ -4,7 +4,8 @@ import java.io.*;
 
 public class BufferedReader_and_Writer_test {
     public static void main(String[] args) {
-
+        bf_Writer();
+        bf_Read();
     }
     public static void bf_Read(){
         File f = new File("d:\\dir\\4.txt");
