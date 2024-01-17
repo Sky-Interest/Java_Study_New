@@ -1,7 +1,7 @@
 package 单线程与多线程;
+//方法2:实现Runnable方式
 
 public class Runnable_test {
-//方法2:实现Runnable方式
     public static void func2() {
         //方法2
         //创建线程对象

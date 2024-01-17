@@ -1,8 +1,7 @@
 package 单线程与多线程;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
+
 
 public class test {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
