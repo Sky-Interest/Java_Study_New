@@ -1,4 +1,4 @@
-package 休眠;
+package 线程休眠;
 
 public class Demo {
     public static void main(String[] args) {
