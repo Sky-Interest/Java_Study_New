@@ -6,8 +6,6 @@ import java.util.concurrent.FutureTask;
 
 //方法3用法
 public class Callable_test {
-
-
     public static void func3() throws ExecutionException, InterruptedException {
         MyCallable mc = new MyCallable();
         //计算结果封装在FutureTask对象

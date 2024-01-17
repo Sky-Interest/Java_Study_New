@@ -16,6 +16,7 @@ public class Thread_test {
         // 因为mt线程执行完毕后会进入线程死亡状态
         //  mt.start();
     }
+
 }
 class MyThread extends Thread {
     @Override
