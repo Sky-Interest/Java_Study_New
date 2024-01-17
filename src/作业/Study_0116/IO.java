@@ -1,4 +1,4 @@
-package Study_0116;
+package 作业.Study_0116;
 
 import java.io.*;
 
@@ -13,7 +13,7 @@ public class IO {
     }
 
     public static void searchAndReplace_str() {
-        File f = new File("D:\\Java_Study\\Java_Study_New\\src\\Study_0116\\pet.template");
+        File f = new File("D:\\Java_Study\\Java_Study_New\\src\\作业.Study_0116\\pet.template");
         File f_w = new File("D:\\dir\\pet.txt");
         try (
                 BufferedReader r = new BufferedReader(new FileReader(f));
@@ -36,9 +36,9 @@ public class IO {
     }
     public static void copy_file(){
         //读取文件目录
-        File f = new File("src/Study_0116/a.txt");
+        File f = new File("src/作业.Study_0116/a.txt");
         //输出文件目录
-        File f_w = new File("src/Study_0116/b.txt");
+        File f_w = new File("src/作业.Study_0116/b.txt");
 
         try(
                 //文件读取器
@@ -63,9 +63,9 @@ public class IO {
     }
     public static void copy_file_bf(){
         //读取文件目录
-        File f = new File("src/Study_0116/a.txt");
+        File f = new File("src/作业.Study_0116/a.txt");
         //输出文件目录
-        File f_w = new File("src/Study_0116/b.txt");
+        File f_w = new File("src/作业.Study_0116/b.txt");
 
         try(
                 //字符流缓冲
@@ -94,8 +94,8 @@ public class IO {
         int b = 0;
         byte[] by = new byte[1024];
         try (
-                FileInputStream fis = new FileInputStream("src/Study_0116/top.bmp");
-                FileOutputStream fos = new FileOutputStream("src/Study_0116/myPicture.bmp");
+                FileInputStream fis = new FileInputStream("src/作业.Study_0116/top.bmp");
+                FileOutputStream fos = new FileOutputStream("src/作业.Study_0116/myPicture.bmp");
                 ){
             while ((b = fis.read(by)) != -1) {
                 fos.write(by,0,b);
