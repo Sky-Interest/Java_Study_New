@@ -123,8 +123,8 @@ class MyRunnable3 implements Runnable {
     int tickets = 10;//卖出了13
 
     //reentrantlock
-    //static ReentrantLock lock = new ReentrantLock();//非公平锁，是抢占式调度的
-    static ReentrantLock lock = new ReentrantLock(true);//公平锁，是轮调式调度的
+    static ReentrantLock lock = new ReentrantLock();//公平锁，是抢占式调度的
+//    static ReentrantLock lock = new ReentrantLock(true);//公平锁，是轮调式调度的
 
     @Override
     public void run() {
@@ -134,7 +134,7 @@ class MyRunnable3 implements Runnable {
             try {
                 if (tickets > 0) {//三个窗口，当线程是窗口一的时候，tickets是1
                     try {
-                        Thread.sleep(50);//tickets：1时 线程一暂停，线程三，线程二也是排队进来了
+                        Thread.sleep(500);//tickets：1时 线程一暂停，线程三，线程二也是排队进来了
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }                                     //线程三 0   线程三减掉后是-1，线程二减掉后是-2
