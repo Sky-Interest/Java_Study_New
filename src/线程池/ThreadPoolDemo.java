@@ -31,7 +31,7 @@ public class ThreadPoolDemo {
         TimeUnit unit：时间单位
         BlockingQueue<Runnable> workQueue 任务队列
          */
-        ExecutorService executorService = new ThreadPoolExecutor(3,5,50L, TimeUnit.SECONDS,
+        ExecutorService executorService = new ThreadPoolExecutor(4,5,50L, TimeUnit.SECONDS,
                 new LinkedBlockingDeque<>(300));
         System.out.println("线程池初始状态:" + executorService);
         //创建4个线程任务对象
