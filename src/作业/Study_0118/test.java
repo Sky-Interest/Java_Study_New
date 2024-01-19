@@ -37,8 +37,8 @@ public class test {
         Thread mt3 = new Thread(mr, "桃跑跑");
 
         //启动3个窗口卖票
-        mt2.start();
         mt1.start();
+        mt2.start();
         mt3.start();
 
 
@@ -124,43 +124,46 @@ class RunThread extends Thread {
 
 class ticket implements Runnable {
 
-    static int tickets = 1000;
+    static int tickets = 100;
     static int count = 0;
-    static ReentrantLock lock = new ReentrantLock(true);//公平锁，是抢占式调度的
+    static ReentrantLock lock = new ReentrantLock();//公平锁，是抢占式调度的
 //    static ReentrantLock lock = new ReentrantLock(true);//公平锁，是轮调式调度的
 
     @Override
     public void run() {
-        //第一张票给黄牛
-        if (Thread.currentThread().getName() == "黄牛党") {
-            tickets--;
-            count++;
-            System.out.println(Thread.currentThread().getName() + "抢到了第" + count + "票." + "剩余" + tickets + "张");
-            Thread.interrupted();
-        }
 
         while (true) {
             //获得锁
             lock.lock();
             try {
+
                 //判断线程名是否为黄牛
-                if (Thread.currentThread().getName() == "黄牛党") {
-                    Thread.interrupted();//线程中断
-                } else {
-                    if (tickets > 0) {
-                        try {
-                            Thread.sleep(10);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        tickets--;
-                        count++;
-                        System.out.println(Thread.currentThread().getName() + "抢到了第" + count + "票." + "剩余" + tickets + "张");
-                    } else {
-                        System.out.println("票卖完了");
-                        break;
+                //放在这个位置判断则未进行买票,黄牛就炸了
+//                if (Thread.currentThread().getName() == "黄牛党") {
+//                    break;
+//                } else {
+                if (tickets > 0) {
+
+                    tickets--;
+                    count++;
+                    System.out.println(Thread.currentThread().getName() + "抢到了第" + count + "票." + "剩余" + tickets + "张");
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
+                    //改进判断位置
+                    if (Thread.currentThread().getName() == "黄牛党") {
+//                    Thread.interrupted();//线程中断
+                        break;//改进:为黄牛时直接退出循环
+                    }
+
+                } else {
+                    System.out.println("票卖完了");
+                    break;
                 }
+//            }
+
             } finally {
                 //释放锁
                 //不在finally使用则在try若干出现错误不能解锁
