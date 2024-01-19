@@ -16,11 +16,11 @@ class PrintWord{
                     System.out.print("好");
                     System.out.println();
                     this.count = 2;
-                    Object.class.notify();//把另外一个线程唤醒
+                    Object.class.notifyAll();//把另外一个线程唤醒
                 }catch (Exception e){
                     e.printStackTrace();
                 }finally {
-                    Object.class.notify();//把另外一个线程唤醒
+                    Object.class.notifyAll();//把另外一个线程唤醒
                 }
             }
         }
@@ -41,16 +41,42 @@ class PrintWord{
                     System.out.print("阳");
                     System.out.println();
                     this.count = 1;
-                    Object.class.notify();//把另外一个线程唤醒
+                    Object.class.notifyAll();//把另外一个线程唤醒
                 }catch (Exception e){
                     e.printStackTrace();
                 }finally {
-                    Object.class.notify();//把另外一个线程唤醒
+                    Object.class.notifyAll();//把另外一个线程唤醒
                 }
             }
         }
     }
+    public void print3(){
+        for(int i = 1;i<=10;i++){
+            synchronized (Object.class){
+                try{
+                    if(count != 3){
+                        Object.class.wait();//当前打印的线程就进入等待
+                    }
+                    System.out.print("我");
+                    System.out.print("想");
+                    System.out.print("打");
+                    System.out.print("原");
+                    System.out.print("神");
+                    System.out.println();
+                    this.count = 1;
+                    Object.class.notifyAll();//把另外一个线程唤醒
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    Object.class.notifyAll();//把另外一个线程唤醒
+                }
+            }
+        }
+    }
+
+
 }
+
 
 public class Demo {
     public static void main(String[] args) {
@@ -61,6 +87,10 @@ public class Demo {
 
         new Thread(()->{
             pd.print2();
+        }).start();
+
+        new Thread(()->{
+            pd.print3();
         }).start();
     }
 }
