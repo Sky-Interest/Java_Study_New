@@ -18,5 +18,11 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql-connector-j-8.3.0" level="project" />
+    <orderEntry type="library" name="commons-dbcp-1.4" level="project" />
+    <orderEntry type="library" name="commons-pool-1.5.6" level="project" />
+    <orderEntry type="library" name="commons-dbutils-1.7" level="project" />
+    <orderEntry type="library" name="commons-io-2.4" level="project" />
+    <orderEntry type="library" name="commons-logging-1.2" level="project" />
+    <orderEntry type="library" name="druid-1.1.23" level="project" />
   </component>
 </module>

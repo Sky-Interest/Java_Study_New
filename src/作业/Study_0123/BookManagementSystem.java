@@ -91,7 +91,9 @@ class BookManager {
     }
 
     public static void updateBook() {
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:8808/bookdb", "root", "root123456"); PreparedStatement ps = conn.prepareStatement("UPDATE t_book_info SET book_name = ?, book_price = ?, book_author = ?, book_date = ? WHERE book_no = ?")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:8808/bookdb", "root", "root123456");
+             PreparedStatement ps = conn.prepareStatement("UPDATE t_book_info SET book_name = ?, book_price = ?, book_author = ?, book_date = ? WHERE book_no = ?"))
+        {
             Scanner input = new Scanner(System.in);
             System.out.print("Enter book number to update: ");
             String bookNo = input.nextLine();
