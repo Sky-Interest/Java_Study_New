@@ -1,11 +1,12 @@
 package 数据库连接池.src.com.gec.testpool;
 
 
-import com.gec.utils.JDBCUtil;
+
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 import 数据库连接池.src.com.gec.service.BookService;
 import 数据库连接池.src.com.gec.service.impl.BookServiceImpl;
+import 数据库连接池.src.com.gec.utils.JDBCUtil;
 
 import java.sql.*;
 

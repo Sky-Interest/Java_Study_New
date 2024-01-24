@@ -1,12 +1,13 @@
 package 数据库连接池.src.com.gec.testqr;
 
 import 数据库连接池.src.com.gec.entity.Book;
-import com.gec.utils.JDBCUtil;
+
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
+import 数据库连接池.src.com.gec.utils.JDBCUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
